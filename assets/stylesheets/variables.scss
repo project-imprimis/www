@@ -1,0 +1,21 @@
+@import "~bulma/sass/utilities/_all";
+
+$primary: #ff22a3;
+$text: $grey-lighter;
+$text-light: $white;
+$text-strong: $grey-lighter;
+
+$link: $primary;
+
+$body-background-color: #222A2C;
+
+$family-primary: "Chakra Petch";
+
+:root {
+  background-image: radial-gradient(#04040400 0%, #04040411 50%, #04040466 100%);
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+@import "~bulma";
+@import "~buefy/src/scss/buefy";
