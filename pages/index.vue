@@ -1,11 +1,21 @@
 <template>
   <section class="hero">
     <div class="hero-body has-text-centered">
-      <h1 class="title">Imprimis.</h1>
-      <h2 class="subtitle">Coming to a dimension near you.<br/>Soon...</h2>
+      <h1 class="title">
+        Imprimis.
+      </h1>
+      <h2 class="subtitle">
+        Coming to a dimension near you.<br>Soon...
+      </h2>
     </div>
   </section>
 </template>
+
+<script>
+export default {
+  name: 'HomePage'
+}
+</script>
 
 <style lang="scss" scoped>
 @import "~bulma/sass/utilities/_all";
@@ -36,15 +46,3 @@
   }
 
 </style>
-
-<script>
-import Card from '~/components/Card'
-
-export default {
-  name: 'HomePage',
-
-  components: {
-    Card
-  }
-}
-</script>
