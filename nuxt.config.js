@@ -46,7 +46,8 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/content
-    '@nuxt/content'
+    '@nuxt/content',
+    '@nuxtjs/i18n'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -57,5 +58,13 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+  i18n: {
+    locales: [
+      { code: 'en', iso: 'en-US', file: 'en-US.js' },
+      { code: 'pl', iso: 'pl-PL', file: 'pl-PL.js' }
+    ],
+    defaultLocale: 'en',
+    langDir: '~/locales/'
   }
 }
