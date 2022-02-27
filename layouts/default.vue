@@ -25,6 +25,17 @@ export default {
         }
       ]
     }
+  },
+  head () {
+    return {
+      title: this.$t('title'),
+      meta: [
+        { hid: 'description', name: 'description', content: this.$t('description') }
+      ],
+      htmlAttrs: {
+        lang: this.$i18n.locale
+      }
+    }
   }
 }
 </script>
