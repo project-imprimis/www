@@ -1,10 +1,11 @@
 <template>
-  <div>
-    <section class="main-content columns">
-      <div class="container column is-10">
-        <nuxt />
+  <div id="main">
+    <nuxt />
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>Imprimis™ footer</p>
       </div>
-    </section>
+    </footer>
   </div>
 </template>
 
@@ -17,11 +18,6 @@ export default {
           title: 'Home',
           icon: 'home',
           to: { name: 'index' }
-        },
-        {
-          title: 'Inspire',
-          icon: 'lightbulb',
-          to: { name: 'inspire' }
         }
       ]
     }
