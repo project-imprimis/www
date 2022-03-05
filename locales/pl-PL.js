@@ -1,4 +1,4 @@
 export default {
-  title: 'Project Imprimis',
-  description: 'Coming to a dimension near you... Soon.'
+  title: 'Projekt Imprimis',
+  description: 'Wkrótce zawita w pobliskim wymiarze…'
 }
