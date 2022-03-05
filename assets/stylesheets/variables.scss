@@ -1,22 +1,114 @@
 @import "~bulma/sass/utilities/_all";
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500&display=swap');
 
-$primary: #ff22a3;
+$primary: #2c383b;
+$primary-light: findLightColor($primary);
+$primary-dark: findDarkColor($primary);
+$primary-invert: findColorInvert($primary);
 $text: $grey-lighter;
 $text-light: $white;
 $text-strong: $grey-lighter;
 
-$link: $primary;
+// Lists and maps
+$custom-colors: null !default;
+$custom-shades: null !default;
+
+// Setup $colors to use as bulma classes (e.g. 'is-twitter')
+$colors: mergeColorMaps(
+    (
+        "white": (
+            $white,
+            $black,
+        ),
+        "black": (
+            $black,
+            $white,
+        ),
+        "light": (
+            $light,
+            $light-invert,
+        ),
+        "dark": (
+            $dark,
+            $dark-invert,
+        ),
+        "primary": (
+            $primary,
+            $primary-invert,
+            $primary-light,
+            $primary-dark,
+        ),
+        "link": (
+            $link,
+            $link-invert,
+            $link-light,
+            $link-dark,
+        ),
+        "info": (
+            $info,
+            $info-invert,
+            $info-light,
+            $info-dark,
+        ),
+        "success": (
+            $success,
+            $success-invert,
+            $success-light,
+            $success-dark,
+        ),
+        "warning": (
+            $warning,
+            $warning-invert,
+            $warning-light,
+            $warning-dark,
+        ),
+        "danger": (
+            $danger,
+            $danger-invert,
+            $danger-light,
+            $danger-dark,
+        ),
+    ),
+    $custom-colors
+);
+
+// Links
+$link: #dbdbdb;
+$link-focus-border: $primary;
+
+$code: #dbdbdb;
+$code-background: darken($primary, 5%);
+$footer-background-color: unset;
+$footer-color: #999999;
 
 $body-background-color: #222A2C;
 
-$family-primary: "Chakra Petch";
+$family-primary: "Chakra Petch", sans-serif;
 
-:root {
-  background-image: radial-gradient(#04040400 0%, #04040411 50%, #04040466 100%);
+body {
+  background-image: linear-gradient(#04040400 0%, #04040411 50%, #04040466 100%);
   min-height: 100vh;
   overflow-y: auto;
 }
 
+// https://css-tricks.com/notched-boxes/
+.button {
+  --notchSize: 6px;
+  
+  clip-path: 
+    polygon(
+      0% var(--notchSize), 
+      var(--notchSize) 0%, 
+      calc(100% - var(--notchSize)) 0%, 
+      100% var(--notchSize), 
+      100% calc(100% - var(--notchSize)), 
+      calc(100% - var(--notchSize)) 100%, 
+      var(--notchSize) 100%, 
+      0% calc(100% - var(--notchSize))
+    );
+}
+
 @import "~bulma";
-@import "~buefy/src/scss/buefy";
+
+// we are not using this at the moment and it wastes a lot of space
+// @import "~buefy/src/scss/buefy";

@@ -28,6 +28,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    { src: '~plugins/vue-carousel', mode: 'client' },
+    { src: '~/plugins/fontawesome.js' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -42,12 +44,13 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/buefy
-    'nuxt-buefy',
+    ['nuxt-buefy', { css: false, materialDesignIcons: false }], // reduce insane space waste
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
-    '@nuxtjs/i18n'
+    '@nuxtjs/i18n',
+    '@nuxtjs/dayjs'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -66,5 +69,10 @@ export default {
     ],
     defaultLocale: 'en',
     langDir: '~/locales/'
+  },
+  dayjs: {
+    locales: ['en', 'pl'],
+    defaultLocale: 'en',
+    plugins: ['relativeTime']
   }
 }
