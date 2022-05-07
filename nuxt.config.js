@@ -1,6 +1,15 @@
+// The repo name should match name of repository hosting static project.
+// The repo name will be used as the base URL. Otherwise images won't load.
+const REPO_NAME = '/www/'
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
+
+  router: {
+    // Specify the base URL to be either '/REPO_NAME/' or '/'.
+    base: process.env.NODE_ENV === 'production' ? REPO_NAME : '/'
+  },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -75,4 +84,5 @@ export default {
     defaultLocale: 'en',
     plugins: ['relativeTime']
   }
+
 }
