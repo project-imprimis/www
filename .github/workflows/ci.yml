@@ -1,25 +1,38 @@
 name: ci
 
+# Controls when the workflow will run.
 on:
+  # Run workflow when pushing or merging.
   push:
+    # Only when pushing to these branches:
     branches:
       - main
       - master
   pull_request:
-    branches:
-      - main
-      - master
+      # Only when merging into these branches:
+      branches:
+        - main
+        - master
 
+  # Allows you to run this workflow manually from the Actions tab.
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel.
 jobs:
+  # This workflow contains a single job called "ci" for continuous integration.
   ci:
+    # The type of machine that runs the jobs (ubuntu-latest for example).
     runs-on: ${{ matrix.os }}
 
     strategy:
+      # Configurations for the virtual environment.
       matrix:
         os: [ubuntu-latest]
         node: [14]
 
+    # Steps represent a sequence of tasks that will be executed as part of the job.
     steps:
+      # Checks-out the repository under $GITHUB_WORKSPACE, so the job can access it.
       - name: Checkout 🛎
         uses: actions/checkout@master
 
@@ -50,3 +63,24 @@ jobs:
 
       - name: Run tests 🧪
         run: yarn test
+
+      - name: Generate static project
+        # The static project is placed in the dist folder.
+        run: yarn generate
+
+      # Show the current working directory. Nice for debugging.
+      # - run: pwd
+
+      # Show what files are in the repo. Nice for debugging.
+      # - run: ls --recursive
+
+      # Deployment will fail unless the workflow has read and write permissions.
+      # Go to Settings > Actions > Workflow permissions to enable read and write
+      # permissions.
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          # Provide a GitHub token to authenticate pushing files.
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # Push Vue.js app in dist folder to gh-pages repo.
+          publish_dir: ./dist
