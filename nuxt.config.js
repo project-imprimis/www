@@ -73,8 +73,8 @@ export default {
   },
   i18n: {
     locales: [
-      { code: 'en', iso: 'en-US', file: 'en-US.js' },
-      { code: 'pl', iso: 'pl-PL', file: 'pl-PL.js' }
+      { code: 'en', iso: 'en-US', file: 'en-US.js', name: 'English', flag: '🇺🇸' },
+      { code: 'pl', iso: 'pl-PL', file: 'pl-PL.js', name: 'Polski', flag: '🇵🇱' }
     ],
     defaultLocale: 'en',
     langDir: '~/locales/'
