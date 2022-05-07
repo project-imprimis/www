@@ -6,6 +6,7 @@
         <h1 class="title bw-text-effect is-size-1">
           {{ $t("header_title") }}
         </h1>
+        <language-switcher />
       </div>
       <div id="bottom-overlay" class="is-flex is-align-items-center">
         <h2 class="slogan rgb-text-effect">
@@ -140,11 +141,13 @@ import { marked } from 'marked'
 
 export default {
   name: 'HomePage',
+
   data () {
     return {
       release: null
     }
   },
+
   mounted () {
     this.$dayjs.locale(this.$i18n.locale)
     this.$axios
@@ -346,4 +349,5 @@ svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {
   overflow: visible;
   vertical-align: -.125em;
 }
+
 </style>

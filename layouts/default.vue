@@ -3,7 +3,7 @@
     <nuxt />
     <footer class="footer">
       <div class="content has-text-centered">
-        <p>Imprimis™ footer</p>
+        <p>&#169; {{ currentYear }} Team Imprimis</p>
       </div>
     </footer>
   </div>
@@ -31,6 +31,12 @@ export default {
       htmlAttrs: {
         lang: this.$i18n.locale
       }
+    }
+  },
+
+  computed: {
+    currentYear () {
+      return new Date().getFullYear()
     }
   }
 }
