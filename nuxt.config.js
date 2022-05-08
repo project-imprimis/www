@@ -38,7 +38,8 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: '~plugins/vue-carousel', mode: 'client' },
-    { src: '~/plugins/fontawesome.js' }
+    { src: '~/plugins/fontawesome.js' },
+    { src: '~/plugins/vue-dompurify-html.js' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -73,8 +74,8 @@ export default {
   },
   i18n: {
     locales: [
-      { code: 'en', iso: 'en-US', file: 'en-US.js', name: 'English', flag: '🇺🇸' },
-      { code: 'pl', iso: 'pl-PL', file: 'pl-PL.js', name: 'Polski', flag: '🇵🇱' }
+      { code: 'en', iso: 'en-US', file: 'en-US.ts', name: 'English', flag: '🇺🇸' },
+      { code: 'pl', iso: 'pl-PL', file: 'pl-PL.ts', name: 'Polski', flag: '🇵🇱' }
     ],
     defaultLocale: 'en',
     langDir: '~/locales/'

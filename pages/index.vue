@@ -15,7 +15,9 @@
       </div>
     </div>
     <div class="section">
-      <div class="container content is-medium" v-html="$t('text_1')" />
+      <div class="container content is-medium">
+        <p> {{ $t('text_1') }} </p>
+      </div>
     </div>
     <div class="section">
       <div class="container">
@@ -29,7 +31,10 @@
               </carousel>
             </client-only>
           </div>
-          <div class="column content is-medium" v-html="$t('text_2')" />
+          <div class="column content is-medium">
+            <p>{{ $t('text_2') }}</p>
+            <p>{{ $t('text_3') }}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -47,10 +52,7 @@
                 </div>
                 <div>{{ $t('download_latest_release', { reltime: $dayjs(release["timestamp"]).fromNow() }) }}</div>
               </div>
-              <div
-                class="changelog content block"
-                v-html="release['changelog']"
-              />
+              <div v-dompurify-html="release['changelog']" class="changelog content block" />
             </div>
           </div>
           <div class="column is-half-desktop is-full-tablet">
