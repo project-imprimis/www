@@ -4,7 +4,7 @@ export default {
   header_title: 'Projekt\xA0Imprimis', // \xa0 = nbsp
   footer: 'Stopka Imprimis™',
   tagline: 'strzelanka pierwszoosobowa z pełnym systemem destrukcji otoczenia',
-  text_1: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam a
+  text_1: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam a
           eros sed arcu aliquet laoreet id ut lorem. Etiam sit amet odio
           molestie, vehicula lectus dapibus, commodo velit. Vestibulum maximus
           velit vitae lorem eleifend, at eleifend lacus sagittis. Lorem ipsum
@@ -17,13 +17,10 @@ export default {
           ultricies quis scelerisque at, auctor ut metus. Aenean vel magna
           massa. Ut elementum molestie erat. Suspendisse accumsan mauris id nisi
           rutrum, ut egestas est suscipit. Sed a dui id est rutrum viverra sit
-          amet eu urna. Morbi sed eleifend felis.</p>`,
-  text_2: `<p>
-             Niszcz i buduj aby zdobyć przewagę. Graj przeciwko innym graczom przez sieć.
-          </p>
-          <p>
-            Wykorzystując szybki i w pełni dynamiczny silnik Libprimis, Imprimis może pochwalić się oświetleniem dotrzymującym kroku destrukcji mapy.
-          </p>`,
+          amet eu urna. Morbi sed eleifend felis.`,
+  text_2: 'Niszcz i buduj aby zdobyć przewagę. Graj przeciwko innym graczom przez sieć.',
+  text_3: `Wykorzystując szybki i w pełni dynamiczny silnik Libprimis, Imprimis
+          może pochwalić się oświetleniem dotrzymującym kroku destrukcji mapy.`,
   download_section_header: 'Pobierz',
   download_latest_release: 'Najnowsze wydanie, z {reltime}.',
   download_linux_header: 'Linux',
